@@ -21,12 +21,22 @@ div .breadcrumbs a {
   color : #333;
 }
 
-.module h2, .module caption, .inlinegroup h2 {
+.module h2, .module caption {
   background: #30caa0;
 }
 
+.inline-group h2 {
+  background: #ffff00;
+}
+
 .button, input[type="button"], input[type="submit"],
-.submitrow input ,a.button {
+.submit-row input ,a.button {
   background: #2c4262;
   color: #fff;
 }
+
+/* .module h2, .module caption, .inlinegroup h2 {
+  background: #30caa0;
+}
+
+ */
