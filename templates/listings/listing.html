@@ -30,6 +30,7 @@
 <!-- Listing -->
 <section id="listing" class="py-4">
   <div class="container">
+    {% include 'partials/_alert.html' %}
     <a href="{% url 'listings' %}" class="btn btn-light mb-4">Back To Listings</a>
     <div class="row">
       <div class="col-md-9">
@@ -44,7 +45,6 @@
         <div class="row mb-5 thumbs">
           {% if listing.photo_1 %}
           <div class="col-md-2">
-            {% comment %}# fix 12 images {% endcomment %}
             <a
               href="{{listing.photo_1.url}}"
               data-lightbox="home-images"
@@ -215,31 +215,40 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form action="{% url 'contact' %}" method="POST">
+          {% csrf_token %}
+          <!--check user id-->
+          {% if user.is_authenticated %}
+          <input type="hidden" name="user_id" value="{{user.id}}" />
+          {% else %}
+          <input type="hidden" name="user_id" value="0" />
+          {% endif %}
+          <input type="hidden" name="listing_id" value="{{listing.id}}" />
           <div class="form-group">
-            <label for="property_name" class="col-form-label"
-              >Property:</label
-            >
+            <label for="property_name" class="col-form-label">Property:</label>
             <input
               type="text"
               name="listing"
               class="form-control"
-              value="45 Prince Street"
-              disabled
+              value="{{listing.title}}"
+              readonly
             />
           </div>
           <div class="form-group">
             <label for="name" class="col-form-label">Name:</label>
+            {% if user.is_authenticated %}
+            <input type="text" name="name" class="form-control" value="{{user.first_name}} {{user.last_name}}" readonly />
+            {% else %}
             <input type="text" name="name" class="form-control" required />
+            {% endif %}
           </div>
           <div class="form-group">
             <label for="email" class="col-form-label">Email:</label>
-            <input
-              type="email"
-              name="email"
-              class="form-control"
-              required
-            />
+            {% if user.is_authenticated %}
+            <input type="email" name="email" class="form-control" value={{user.email}} required />
+            {% else %}
+            <input type="email" name="email" class="form-control" required />
+            {% endif %}
           </div>
           <div class="form-group">
             <label for="phone" class="col-form-label">Phone:</label>
@@ -250,11 +259,7 @@
             <textarea name="message" class="form-control"></textarea>
           </div>
           <hr />
-          <input
-            type="submit"
-            value="Send"
-            class="btn btn-block btn-secondary"
-          />
+          <input type="submit" value="Send" class="btn btn-block btn-secondary" />
         </form>
       </div>
     </div>
