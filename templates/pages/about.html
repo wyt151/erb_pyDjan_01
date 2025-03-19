@@ -48,7 +48,7 @@
       {% if mvp_realtors %}
       <div class="col-md-4">
         <div id="carouselslide" class="carousel slide" data-ride="carousel" data-interval="3000">
-          <div class="carousel-inner">
+          <div class="carousel-inner" style="max-height:500px;">
             {% for realtor in mvp_realtors %}
               <div {% if forloop.first %} class="carousel-item card active" {% else %} class="carousel-item card" {% endif %}>
                 <img

@@ -28,9 +28,35 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        {% comment %} {% include 'partials/_alert.html' %} {% endcomment %}
+        {% include 'partials/_alert.html' %}
         <h2>Welcome {{user.first_name | title}}</h2>
-        <p>Here are the property listings that you have inquired about</p>
+        {% if contacts %}
+          <p>Here are the property listings that you have inquired about</p>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Property</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for contact in contacts %}
+              <tr>
+                <td>{{contact.listing_id}}</td>
+                <td>{{contact.listing}}</td>
+                <td>
+                  <a class="btn btn-info" href="{% url 'listing' contact.listing_id %}">View Listing</a>
+                  <a class="btn btn-danger" href="{% url 'delete_contact' contact.id %}">Delete Inquiry</a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% else %}
+          <p>You have no inquiries</p>
+        {% endif %}
+        {% comment %} <p>Here are the property listings that you have inquired about</p>
         <table class="table">
           <thead>
             <tr>
@@ -40,29 +66,26 @@
             </tr>
           </thead>
           <tbody>
+            {% if contacts %}
+            {% for contact in contacts %}
             <tr>
-              <td>22</td>
-              <td>45 Prince Street</td>
+              <td>{{contact.id}}</td>
+              <td>{{contact.listing}}</td>
               <td>
-                <a class="btn btn-light" href="#">View Listing</a>
+                <a class="btn btn-light" href="{% url 'listing' contact.listing_id %}">View Listing</a>
               </td>
             </tr>
+            {% endfor %}
+            {% else %}
             <tr>
-              <td>43</td>
-              <td>22 Westbrook rd</td>
+              <td></td>
+              <td>No inquiries at the moment</td>
               <td>
-                <a class="btn btn-light" href="#">View Listing</a>
               </td>
             </tr>
-            <tr>
-              <td>31</td>
-              <td>12 Samson Ave</td>
-              <td>
-                <a class="btn btn-light" href="#">View Listing</a>
-              </td>
-            </tr>
+            {% endif %}
           </tbody>
-        </table>
+        </table> {% endcomment %}
       </div>
     </div>
   </div>
