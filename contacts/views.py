@@ -28,8 +28,8 @@ def contact(request):
     # send_mail(
     #   'Property Listing Inquiry',
     #   'There has been an inquiry for ' + listing + '. Sign in to the admin panel for more info',
-    #   'django_admin@bcre.com', #admin email
-    #   [realtor_email], #to email
+    #   'django_admin@bcre.com', #admin-sender's email
+    #   [realtor_email], #to-receiver's email
     #   fail_silently=False
     # )
     messages.success(request,"Your request has been submitted, we will get back to you soon!")

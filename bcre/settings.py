@@ -150,8 +150,9 @@ MESSAGE_TAGS = {
     messages.SUCCESS : 'success'
 }
 
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = '587'
+EMAIL_PORT = 587
 EMAIL_HOST_USER = ''   #email account
-EMAIL_HOST_PASSWORD = ''  #password
+EMAIL_HOST_PASSWORD = ''  #app password gen by gmail 2step,delete spaces
 EMAIL_USE_TLS = True
