@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Supplements",
+        "slug": "supplements"
+    },
+    {
+        "id": 2,
+        "name": "Toys",
+        "slug": "toys"
+        
+    },
+    {
+        "id": 3,
+        "name": "Accessories",
+        "slug": "accessories"
+    },
+    {
+        "id": 4,
+        "name": "Foods",
+        "slug": "foods"
+    }
+]

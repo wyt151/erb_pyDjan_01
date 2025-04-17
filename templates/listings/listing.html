@@ -245,11 +245,11 @@
           </div>
           <div class="form-group">
             <label for="email" class="col-form-label">Email:</label>
-            {% if user.is_authenticated %}
-            <input type="email" name="email" class="form-control" value={{user.email}} required />
-            {% else %}
+            
+            <input type="email" name="email" class="form-control" {% if user.is_authenticated %} value={{user.email}} {% endif %} required />
+            
             <input type="email" name="email" class="form-control" required />
-            {% endif %}
+            
           </div>
           <div class="form-group">
             <label for="phone" class="col-form-label">Phone:</label>

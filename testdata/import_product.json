@@ -1,0 +1,55 @@
+[
+    {
+        "id": 1,
+        "category": 5,
+        "name": "Hills science diet dog food - adult",
+        "slug": "hills-science-diet-dog-food-adult",
+        "image": "photos/2025/04/11/f001_Hills.jpg",
+        "description": "Hill's® Science Diet® Adult dry dog food is specially formulated to fuel the energy needs of dogs during the prime of their life. Made with high quality, easy-to-digest ingredients.",
+        "price": "259.00",
+        "stock": 100,
+        "available": true,
+        "created": "2025-04-03T06:44:49.022Z",
+        "updated": "2025-04-03T06:44:49.022Z"
+        
+    },
+    {
+        "id": 2,
+        "category": 5,
+        "name": "Royal Canine dry food - mini adult",
+        "slug": "royal-canine-dry-food-mini-adult",
+        "image": "photos/2025/04/11/f002_Packshot.jpg",
+        "description": "Helps maintain a healthy weight in small breed dogs by perfectly meeting their high energy needs. Contains L-carnitine. Satisfies the fussy appetite of small breed dogs by means of its formulation and a selection of exclusive flavourings. This formula contains nutrients that help support a healthy skin. Enriched with EPA-DHA.",
+        "price": "269.00",
+        "stock": 50,
+        "available": true,
+        "created": "2025-04-03T06:48:34.296Z",
+        "updated": "2025-04-03T06:48:34.296Z"
+    },
+    {
+        "id": 3,
+        "category": 5,
+        "name": "Chicka Pupatouille cubies",
+        "slug": "chicka-pupatouille-cubies",
+        "image": "photos/2025/04/11/f003_Chicken.webp",
+        "description": "The Cubies cooking process can be broken down to 3 simple steps! First gently cooked sous-vide (just like our frozen food), then diced into Cubies and slowly air dried. Slowly air drying our food allows us to remove moisture from the Cubies without applying heat to them. This allows us to maintain the nutrient profile of the ingredients while making the Cubies a shelf stable product. Pawfect as a full meal, meal mixer, or treat!",
+        "price": "68.00",
+        "stock": 45,
+        "available": true,
+        "created": "2025-04-03T06:51:49.350Z",
+        "updated": "2025-04-03T06:51:49.350Z"
+    },
+    {
+        "id": 4,
+        "category": 5,
+        "name": "Grain free beef recipe",
+        "slug": "grain-free-beef-recipe",
+        "image": "photos/2025/04/11/f004_Beef.webp",
+        "description": "Ranch-raised beef plus nutrient-rich produce unite to make a low-carb, lower calorie, grain-free, and high protein dish. 100% human grade, for 100% of dogs—no matter their age!",
+        "price": "78.00",
+        "stock": 38,
+        "available": true,
+        "created": "2025-04-03T06:52:48.548Z",
+        "updated": "2025-04-03T06:52:48.548Z"
+    }
+]
